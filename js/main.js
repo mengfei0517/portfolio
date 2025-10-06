@@ -1,0 +1,176 @@
+// ===========================
+// Navigation Bar Scroll Effect
+// ===========================
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Add shadow on scroll
+    if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// ===========================
+// Mobile Menu Toggle
+// ===========================
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const navMenu = document.getElementById('navMenu');
+
+mobileMenuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Toggle icon
+    const icon = mobileMenuToggle.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-menu a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+
+// ===========================
+// Smooth Scroll for Navigation Links
+// ===========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ===========================
+// Intersection Observer for Fade-in Animations
+// ===========================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe elements
+const animatedElements = document.querySelectorAll('.timeline-item, .skill-category, .project-card');
+animatedElements.forEach(el => observer.observe(el));
+
+// ===========================
+// Active Navigation Link Highlight
+// ===========================
+const sections = document.querySelectorAll('section[id]');
+
+function highlightNavigation() {
+    const scrollY = window.pageYOffset;
+    
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+        
+        if (navLink) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLink.classList.add('active');
+            } else {
+                navLink.classList.remove('active');
+            }
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightNavigation);
+
+// ===========================
+// Add CSS for active link (dynamic)
+// ===========================
+const style = document.createElement('style');
+style.textContent = `
+    .nav-menu a.active {
+        color: var(--accent-color);
+    }
+    .nav-menu a.active::after {
+        width: 100%;
+    }
+`;
+document.head.appendChild(style);
+
+// ===========================
+// Typing Effect for Hero Subtitle (Optional)
+// ===========================
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Uncomment to enable typing effect
+// const heroSubtitle = document.querySelector('.hero-subtitle');
+// const originalText = heroSubtitle.textContent;
+// window.addEventListener('load', () => {
+//     typeWriter(heroSubtitle, originalText, 80);
+// });
+
+// ===========================
+// Load Animation on Page Load
+// ===========================
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// ===========================
+// Print/Console welcome message
+// ===========================
+console.log(`
+╔═══════════════════════════════════════╗
+║   Welcome to Mengfei Fan's Portfolio  ║
+║   Robotics & AI Engineer              ║
+║   Built with ❤️ and JavaScript        ║
+╚═══════════════════════════════════════╝
+`); 
