@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -27,10 +27,9 @@
                 </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -66,6 +65,9 @@
                         <a href="mailto:mengfeifan517@163.com" class="social-link" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
+                        <a href="https://www.linkedin.com/in/mengfei-fan-a9b399309" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                         <a href="https://github.com/mengfei0517" target="_blank" class="social-link" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
@@ -79,98 +81,71 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
-                        <img src="images/profile.jpg" alt="Mengfei Fan" onerror="this.src='https://via.placeholder.com/400x480?text=Mengfei+Fan'">
+                        <img src="images/photo.jpg" alt="Mengfei Fan" onerror="this.src='https://via.placeholder.com/400x480?text=Mengfei+Fan'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="section" id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Technical University of Munich (TUM)</h3>
-                            <span class="timeline-date">Apr 2022 - Jun 2025</span>
-                        </div>
-                        <p class="timeline-subtitle">Master's in Mechatronics and Robotics</p>
-                        <ul class="timeline-details">
-                            <li>Representative Courses: Robot Dynamics, ROS/ROS2, Optimal Control, Machine Learning, Computational Intelligence</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Sichuan University</h3>
-                            <span class="timeline-date">Sep 2017 - Jun 2021</span>
-                        </div>
-                        <p class="timeline-subtitle">Bachelor's in Mechanical Design, Manufacturing, and Automation</p>
-                        <ul class="timeline-details">
-                            <li>National Scholarship, First Prize Scholarship</li>
-                            <li>Key Courses: Control Engineering, CNC Technology, Microcomputer Principles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section bg-light" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming</h3>
-                    <p>C++17/20, Python, MATLAB</p>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Robotics</h3>
-                    <p>ROS1/2, MoveIt2, MuJoCo, Gazebo, Behaviour Trees, RL (PyTorch, SB3)</p>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-sliders-h"></i>
-                    </div>
-                    <h3>Control</h3>
-                    <p>PID, MPC, LQR, IK, Trajectory Optimisation</p>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Tools</h3>
-                    <p>Linux, Git, VS Code, LaTeX</p>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Languages</h3>
-                    <p>Chinese (Native), English (CET-6), German (C1)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Dual-Arm Box Stacking Task</h3>
+                        <span class="project-date">September 2025</span>
+                    </div>
+                    <div class="project-media" style="margin-bottom: 1rem;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                                <source src="videos/Dual-arm box stacking task.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Dual-Arm Manipulation</span>
+                        <span class="tag">ROS</span>
+                        <span class="tag">Motion Planning</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <ul class="project-details">
+                        <li>Developed coordinated dual-arm manipulation system for box stacking tasks.</li>
+                        <li>Implemented synchronized motion planning and control strategies for bimanual manipulation.</li>
+                        <li>Achieved robust object handling and precise stacking through coordinated arm movements.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Multi-Object Pick-and-Place Task Execution Training</h3>
+                        <span class="project-date">July 2025</span>
+                    </div>
+                    <div class="project-media" style="margin-bottom: 1rem;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                                <source src="videos/multi-pnp.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">MuJoCo</span>
+                        <span class="tag">Franka Panda</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Behavior Trees</span>
+                    </div>
+                    <ul class="project-details">
+                        <li>Implemented event-driven dense reward for Franka robot multi-object pick-and-place tasks and trained TQC agent in simulation.</li>
+                        <li>Wrapped RL sub-policies into BT action nodes, enabling robust sequencing across variable shelf heights.</li>
+                        <li>Implemented modular skill encapsulation (move, rotate, ee_control) for clear task logic and debug-friendly execution.</li>
+                    </ul>
+                </div>
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Long-Horizon Task Parsing & Validation with LLMs and Behavior Trees</h3>
@@ -195,6 +170,14 @@
                         <h3>Autonomous Quadruped Robot Navigation</h3>
                         <span class="project-date">Jun 2024 - Aug 2024</span>
                     </div>
+                    <div class="project-media" style="margin-bottom: 1rem;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                                <source src="videos/Dog.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
                     <div class="project-tags">
                         <span class="tag">Linux</span>
                         <span class="tag">ROS</span>
@@ -208,38 +191,6 @@
                     </ul>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Multi-Object Pick-and-Place Task Execution Training</h3>
-                        <span class="project-date">July 2025</span>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">MuJoCo</span>
-                        <span class="tag">Franka Panda</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Behavior Trees</span>
-                    </div>
-                    <ul class="project-details">
-                        <li>Implemented event-driven dense reward for Franka robot multi-object pick-and-place tasks and trained TQC agent in simulation.</li>
-                        <li>Wrapped RL sub-policies into BT action nodes, enabling robust sequencing across variable shelf heights.</li>
-                        <li>Implemented modular skill encapsulation (move, rotate, ee_control) for clear task logic and debug-friendly execution.</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Newton-Raphson Solver for Nonlinear Systems</h3>
-                        <span class="project-date">Jan 2025 - Mar 2025</span>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Linux</span>
-                        <span class="tag">C++</span>
-                    </div>
-                    <ul class="project-details">
-                        <li>Designed and implemented a high-performance Newton-Raphson solver in C++ to address nonlinear equations.</li>
-                        <li>Enhanced proficiency in object-oriented programming and numerical optimization techniques.</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -249,6 +200,20 @@
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>MIRMI, Technical University of Munich</h3>
+                            <span class="timeline-date">Apr 2024 - Jun 2025</span>
+                        </div>
+                        <p class="timeline-subtitle">Thesis Student, FI Fabrik Lab</p>
+                        <ul class="timeline-details">
+                            <li>Conducted master's thesis on long-horizon task parsing and validation using LLMs and behavior trees for robotic manipulation in kitchen environments.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -315,6 +280,57 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section class="section bg-light" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <p>C++17/20, Python, MATLAB</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Robotics</h3>
+                    <p>ROS1/2, MoveIt2, MuJoCo, Gazebo, Behaviour Trees</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Control</h3>
+                    <p>PID, MPC, LQR, IK, Trajectory Optimisation</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools</h3>
+                    <p>Linux, Git, VS Code, LaTeX</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning/AI</h3>
+                    <p>LLMs, ACT, SmallVLA, Diffusion, RL (PyTorch, SB3)</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Languages</h3>
+                    <p>Chinese (Native), English (CET-6), German (C1)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="section contact-section" id="contact">
         <div class="container">
@@ -364,6 +380,28 @@
         </div>
     </section>
 
+    <!-- Lifestyle Section -->
+    <section class="section bg-light" id="lifestyle">
+        <div class="container">
+            <h2 class="section-title">Beyond Work</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+                A glimpse into my life outside of robotics and engineering
+            </p>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">
+                        <i class="fas fa-camera"></i> Moments
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <img src="images/image.png" alt="Personal moment" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="images/cake.jpg" alt="Homemade cake" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="images/cake.png" alt="Cake decoration" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -371,6 +409,11 @@
             <p class="footer-note">Built with passion for robotics and AI</p>
         </div>
     </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
