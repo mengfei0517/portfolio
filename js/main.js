@@ -208,4 +208,124 @@ console.log(`
 ║   Robotics & AI Engineer              ║
 ║   Built with ❤️ and JavaScript        ║
 ╚═══════════════════════════════════════╝
-`); 
+`);
+
+// ===========================
+// Slideshow Functionality
+// ===========================
+class Slideshow {
+    constructor(windowElement, images, intervalTime = 3000) {
+        this.window = windowElement;
+        this.container = windowElement.querySelector('.slideshow-container');
+        this.images = images;
+        this.currentIndex = 0;
+        this.intervalTime = intervalTime;
+        this.interval = null;
+        this.isPaused = false;
+
+        this.init();
+    }
+
+    init() {
+        // Create image elements
+        this.images.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Cake ${index + 1}`;
+            img.className = 'slideshow-image';
+            if (index === 0) {
+                img.classList.add('active');
+            }
+            this.container.appendChild(img);
+        });
+
+        // Start slideshow
+        this.start();
+
+        // Add hover event listeners
+        this.window.addEventListener('mouseenter', () => this.pause());
+        this.window.addEventListener('mouseleave', () => this.resume());
+    }
+
+    start() {
+        this.interval = setInterval(() => {
+            if (!this.isPaused) {
+                this.next();
+            }
+        }, this.intervalTime);
+    }
+
+    next() {
+        const images = this.container.querySelectorAll('.slideshow-image');
+        images[this.currentIndex].classList.remove('active');
+
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+
+        images[this.currentIndex].classList.add('active');
+    }
+
+    pause() {
+        this.isPaused = true;
+    }
+
+    resume() {
+        this.isPaused = false;
+    }
+
+    stop() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    }
+}
+
+// Initialize slideshows when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // All cake images available
+    const allCakeImages = [
+        'images/cake1.jpg',
+        'images/cake2.jpg',
+        'images/cake3.jpg',
+        'images/cake4.jpg',
+        'images/cake5.jpg',
+        'images/cake6.jpg',
+        'images/cake7.jpg',
+        'images/cake8.jpg',
+        'images/cake9.jpg',
+        'images/cake10.jpg',
+        'images/cake11.jpg',
+        'images/cake12.jpg',
+        'images/cake13.jpg',
+        'images/cake14.jpg'
+    ];
+
+    // Shuffle array helper function
+    function shuffle(array) {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
+    }
+
+    // Distribute images across 4 slideshows
+    const shuffled = shuffle(allCakeImages);
+    const imagesPerSlideshow = Math.ceil(shuffled.length / 4);
+
+    const slideshow1Images = shuffled.slice(0, imagesPerSlideshow);
+    const slideshow2Images = shuffled.slice(imagesPerSlideshow, imagesPerSlideshow * 2);
+    const slideshow3Images = shuffled.slice(imagesPerSlideshow * 2, imagesPerSlideshow * 3);
+    const slideshow4Images = shuffled.slice(imagesPerSlideshow * 3);
+
+    // Get slideshow windows
+    const windows = document.querySelectorAll('.slideshow-window');
+
+    if (windows.length === 4) {
+        // Create slideshows with different speeds for variety
+        new Slideshow(windows[0], slideshow1Images, 2500);
+        new Slideshow(windows[1], slideshow2Images, 3000);
+        new Slideshow(windows[2], slideshow3Images, 3500);
+        new Slideshow(windows[3], slideshow4Images, 2800);
+    }
+}); 
