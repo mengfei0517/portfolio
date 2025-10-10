@@ -636,6 +636,18 @@ body {
     font-size: 0.95rem;
 }
 
+.additional-info a {
+    color: var(--contact-text);
+    text-decoration: underline;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.additional-info a:hover {
+    opacity: 0.8;
+}
+
+
 .additional-info i {
     margin-top: 0.2rem;
     color: var(--contact-text);
