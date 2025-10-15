@@ -393,6 +393,21 @@ body {
     gap: 0.7rem;
 }
 
+.org-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.org-logo {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
 .timeline-header h3 {
     font-size: 1.1rem;
     color: var(--primary-color);
@@ -757,6 +772,10 @@ body {
         width: 46px;
         height: 46px;
     }
+
+    .org-logo {
+        height: 24px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -783,6 +802,10 @@ body {
         right: 1rem;
         width: 44px;
         height: 44px;
+    }
+
+    .org-logo {
+        height: 22px;
     }
 }
 

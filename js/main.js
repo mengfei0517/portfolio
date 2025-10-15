@@ -283,20 +283,20 @@ class Slideshow {
 document.addEventListener('DOMContentLoaded', () => {
     // All cake images available
     const allCakeImages = [
-        'images/cake1.jpg',
-        'images/cake2.jpg',
-        'images/cake3.jpg',
-        'images/cake4.jpg',
-        'images/cake5.jpg',
-        'images/cake6.jpg',
-        'images/cake7.jpg',
-        'images/cake8.jpg',
-        'images/cake9.jpg',
-        'images/cake10.jpg',
-        'images/cake11.jpg',
-        'images/cake12.jpg',
-        'images/cake13.jpg',
-        'images/cake14.jpg'
+        'images/cake/cake1.jpg',
+        'images/cake/cake2.jpg',
+        'images/cake/cake3.jpg',
+        'images/cake/cake4.jpg',
+        'images/cake/cake5.jpg',
+        'images/cake/cake6.jpg',
+        'images/cake/cake7.jpg',
+        'images/cake/cake8.jpg',
+        'images/cake/cake9.jpg',
+        'images/cake/cake10.jpg',
+        'images/cake/cake11.jpg',
+        'images/cake/cake12.jpg',
+        'images/cake/cake13.jpg',
+        'images/cake/cake14.jpg'
     ];
 
     // Shuffle array helper function
