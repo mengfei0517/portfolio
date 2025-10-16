@@ -231,7 +231,7 @@ class Slideshow {
         this.images.forEach((src, index) => {
             const img = document.createElement('img');
             img.src = src;
-            img.alt = `Cake ${index + 1}`;
+            img.alt = `Slide ${index + 1}`;
             img.className = 'slideshow-image';
             if (index === 0) {
                 img.classList.add('active');
@@ -281,8 +281,8 @@ class Slideshow {
 
 // Initialize slideshows when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // All cake images available
-    const allCakeImages = [
+    // Image sets by category
+    const cakeImages = [
         'images/cake/cake1.jpg',
         'images/cake/cake2.jpg',
         'images/cake/cake3.jpg',
@@ -292,14 +292,38 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/cake/cake7.jpg',
         'images/cake/cake8.jpg',
         'images/cake/cake9.jpg',
-        'images/cake/cake10.jpg',
-        'images/cake/cake11.jpg',
-        'images/cake/cake12.jpg',
-        'images/cake/cake13.jpg',
-        'images/cake/cake14.jpg'
+        'images/cake/cake.png'
     ];
 
-    // Shuffle array helper function
+    const sportImages = [
+        'images/sport/sport1.jpg',
+        'images/sport/sport2.jpg',
+        'images/sport/sport3.jpg',
+        'images/sport/sport4.jpg',
+        'images/sport/sport5.jpg',
+        'images/sport/sport6.jpg',
+        'images/sport/sport7.jpg',
+        'images/sport/sport8.jpg'
+    ];
+
+    const breadImages = [
+        'images/bread/bread1.jpg',
+        'images/bread/bread2.jpg',
+        'images/bread/bread3.jpg',
+        'images/bread/bread4.jpg',
+        'images/bread/bread5.jpg'
+    ];
+
+    const photoImages = [
+        'images/photo/photograph1.jpg',
+        'images/photo/photograph2.jpg',
+        'images/photo/photograph3.jpg',
+        'images/photo/photograph4.jpg',
+        'images/photo/photograph5.jpg',
+        'images/photo/photograph6.jpg'
+    ];
+
+    // Shuffle helper
     function shuffle(array) {
         const newArray = [...array];
         for (let i = newArray.length - 1; i > 0; i--) {
@@ -309,23 +333,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return newArray;
     }
 
-    // Distribute images across 4 slideshows
-    const shuffled = shuffle(allCakeImages);
-    const imagesPerSlideshow = Math.ceil(shuffled.length / 4);
-
-    const slideshow1Images = shuffled.slice(0, imagesPerSlideshow);
-    const slideshow2Images = shuffled.slice(imagesPerSlideshow, imagesPerSlideshow * 2);
-    const slideshow3Images = shuffled.slice(imagesPerSlideshow * 2, imagesPerSlideshow * 3);
-    const slideshow4Images = shuffled.slice(imagesPerSlideshow * 3);
-
-    // Get slideshow windows
     const windows = document.querySelectorAll('.slideshow-window');
 
     if (windows.length === 4) {
-        // Create slideshows with different speeds for variety
-        new Slideshow(windows[0], slideshow1Images, 2500);
-        new Slideshow(windows[1], slideshow2Images, 3000);
-        new Slideshow(windows[2], slideshow3Images, 3500);
-        new Slideshow(windows[3], slideshow4Images, 2800);
+        // 1 => cake, 2 => sport, 3 => bread, 4 => photo
+        new Slideshow(windows[0], shuffle(cakeImages), 2500);
+        new Slideshow(windows[1], shuffle(sportImages), 3000);
+        new Slideshow(windows[2], shuffle(breadImages), 3500);
+        new Slideshow(windows[3], shuffle(photoImages), 2800);
     }
-}); 
+});
