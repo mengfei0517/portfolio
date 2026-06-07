@@ -396,6 +396,12 @@ body {
 .org-logo-link {
     display: inline-flex;
     align-items: center;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.org-logo-link:hover {
+    transform: scale(1.1);
 }
 
 .org-logo {
@@ -408,6 +414,47 @@ body {
     background: transparent;
     padding: 0;
     object-fit: contain;
+}
+
+/* Featured logo: pulsing dot + tooltip */
+.org-logo-link--featured::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+.org-logo-link--featured::after {
+    content: '📷 Spot me in this article';
+    position: absolute;
+    bottom: calc(100% + 8px);
+    right: 0;
+    background: var(--primary-color);
+    color: var(--bg-main);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+.org-logo-link--featured:hover::after {
+    opacity: 1;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
 }
 
 .timeline-header h3 {
