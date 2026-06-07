@@ -44,3 +44,5 @@ yarn.lock
 *.fdb_latexmk
 *.fls
 *.pdf 
+
+.claude/
